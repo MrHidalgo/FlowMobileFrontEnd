@@ -2,19 +2,17 @@
 
 #### Structure Front-End/Back-End application
 
-```
     FlowMobile/
       ├─ app/  (Front-End files - Ionic)
       ├─ bin/  (Helper scripts)
       ├─ doc/  (Documentation files)
       ├─ lib/  (Back-End helpers files)
       ├─ test/ (Testing scripts)
-    package.json
-    package-lock.json
-    README.MD
-    server.js
-    .gitignore
-```
+      ├─ .gitignore  
+      ├─ server.js
+      ├─ README.MD 
+      ├─ package-lock.json 
+      └─ package.json
 
 #### Installation:
 
@@ -26,15 +24,20 @@ Then, install the CLI globally (you may need sudo):
     
 #### Getting Started (to local testing):
 
-Once you **cd** into your project’s directory, a few new commands become available to you, such as ionic serve
+Once you **cd** into your project’s directory...
 
     $ cd app
+    
+... a few new commands become available to you, such as ionic serve
+
     $ npm i
     $ ionic serve
     
 While running **ionic serve**, changes you make to your app code will automatically refresh the browser.
 
-You can list available commands with the ionic --help command.
+You can list available commands with the command: 
+
+    $ ionic --help 
     
 #### Using Cordova:
 
@@ -51,27 +54,30 @@ The ionic cordova commands (aside from ionic cordova resources) wrap the Cordova
     
 #### Troubleshooting:
 
-If you’re having trouble with the Ionic CLI, you can try the following:
+If you’re having trouble with the **Ionic CLI**, you can try the following:
 
-- Make sure you’re on the latest version of the CLI. Update with npm update -g ionic.
+- Make sure you’re on the latest version of the CLI. Update with:
+
+        $ npm update -g ionic.
+    
 - Try running commands with the --verbose flag, which will print DEBUG messages.
 
 #### Project Structure:
 
     app/
-    ├─ ionic.config.json #Ionic project config file
+    ├─ ionic.config.json        (Ionic project config file)
     ├─ package.json
     ├─ src/
     │  ├─ app/
-    │  │  ├─ app.component.ts #root component for your app
-    │  │  ├─ app.html #app component template
-    │  │  ├─ app.module.ts #NgModule for app component
-    │  │  ├─ app.scss #global SCSS
-    │  │  └─ main.ts #bootstrap file
-    │  ├─ assets/ #put your images, etc. here
-    │  ├─ pages/ #contains the page components for your app
+    │  │  ├─ app.component.ts   (root component for your app)
+    │  │  ├─ app.html           (app component template)
+    │  │  ├─ app.module.ts      (NgModule for app component)
+    │  │  ├─ app.scss           (global SCSS)
+    │  │  └─ main.ts            (bootstrap file)
+    │  ├─ assets/               (put your images, etc. here)
+    │  ├─ pages/                (contains the page components for your app)
     │  ├─ theme/
-    │  │  └─ variables.scss #see https://ionicframework.com/docs/theming
-    │  └─ index.html #main html file
-    └─ www/ #build output directory
+    │  │  └─ variables.scss     (see https://ionicframework.com/docs/theming)
+    │  └─ index.html            (main html file)
+    └─ www/                     (build output directory)
 
