@@ -1,14 +1,14 @@
-## Flow Mobile Application
+# Flow Mobile Application
 
-### Structure Front-End/Back-End application
+#### Structure Front-End/Back-End application
 
 ```
-FlowMobile
-        |--- app  (Front-End files - mobile application)
-        |--- bin  (Helper scripts)
-        |--- doc  (Documentation files)
-        |--- lib  (Back-End helpers files)
-        |--- test (Testing scripts)
+    FlowMobile/
+      ├─ app/  (Front-End files - Ionic)
+      ├─ bin/  (Helper scripts)
+      ├─ doc/  (Documentation files)
+      ├─ lib/  (Back-End helpers files)
+      ├─ test/ (Testing scripts)
     package.json
     package-lock.json
     README.MD
@@ -58,20 +58,20 @@ If you’re having trouble with the Ionic CLI, you can try the following:
 
 #### Project Structure:
 
-    project/
-    ├─ ionic.config.json # Ionic project config file
+    app/
+    ├─ ionic.config.json #Ionic project config file
     ├─ package.json
     ├─ src/
     │  ├─ app/
-    │  │  ├─ app.component.ts # root component for your app
-    │  │  ├─ app.html # app component template
-    │  │  ├─ app.module.ts # NgModule for app component
-    │  │  ├─ app.scss # global SCSS
-    │  │  └─ main.ts # bootstrap file
-    │  ├─ assets/ # put your images, etc. here
-    │  ├─ pages/ # contains the page components for your app
+    │  │  ├─ app.component.ts #root component for your app
+    │  │  ├─ app.html #app component template
+    │  │  ├─ app.module.ts #NgModule for app component
+    │  │  ├─ app.scss #global SCSS
+    │  │  └─ main.ts #bootstrap file
+    │  ├─ assets/ #put your images, etc. here
+    │  ├─ pages/ #contains the page components for your app
     │  ├─ theme/
-    │  │  └─ variables.scss # see https://ionicframework.com/docs/theming
-    │  └─ index.html # main html file
-    └─ www/ # build output directory
+    │  │  └─ variables.scss #see https://ionicframework.com/docs/theming
+    │  └─ index.html #main html file
+    └─ www/ #build output directory
 
