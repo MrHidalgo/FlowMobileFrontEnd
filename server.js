@@ -4,7 +4,7 @@ const app   = express(),
     port    = process.env.port || 1337;
 
 app.get('/', function (req, res) {
-    res.send('Hello World!');
+    res.send('Hello Ionic App!');
 });
 
 const server = app.listen(port, function () {
