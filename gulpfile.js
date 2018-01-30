@@ -7,7 +7,10 @@ const gulp      = require('gulp'),
 const knownOptions = {
     string: 'packageName',
     string: 'packagePath',
-    default: {packageName: "Package.zip", packagePath: path.join(__dirname, '_package')}
+    default: {
+        packageName: "Package.zip",
+        packagePath: path.join(__dirname, '_package')
+    }
 };
 
 const options = minimist(process.argv.slice(2), knownOptions);
