@@ -12,6 +12,8 @@
       ├─ server.js
       ├─ README.MD 
       ├─ package-lock.json 
+      ├─ gulpfile.js
+      ├─ robots.txt 
       └─ package.json
 
 #### Installation:
