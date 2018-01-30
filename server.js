@@ -1,4 +1,5 @@
-﻿﻿const express = require('express');
+﻿/*
+﻿const express = require('express');
 
 const app   = express(),
     port    = process.env.port || 1337;
@@ -13,3 +14,13 @@ const server = app.listen(port, function () {
 
     console.log(`Application listening at => ${host}:${port}`);
 });
+*/
+
+const http = require('http');
+
+http.createServer(function (req, res) {
+
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end('Hello, world!');
+
+}).listen(process.env.PORT || 8080);
