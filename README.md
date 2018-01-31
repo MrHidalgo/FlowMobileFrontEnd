@@ -1,20 +1,15 @@
-# Flow Mobile Application
+# Flow Mobile Application - Front-End part
 
-#### Structure Front-End/Back-End application
+#### Structure Front-End:
 
-    FlowMobile/
+    FlowMobileFrontEnd/
       ├─ app/  (Front-End files - Ionic)
       ├─ bin/  (Helper scripts)
       ├─ doc/  (Documentation files)
-      ├─ lib/  (Back-End helpers files)
       ├─ test/ (Testing scripts)
       ├─ .gitignore  
-      ├─ server.js
-      ├─ README.MD 
-      ├─ package-lock.json 
-      ├─ gulpfile.js
       ├─ robots.txt 
-      └─ package.json
+      └─ README.MD
 
 #### Installation:
 
