@@ -9,19 +9,33 @@
 
 <ion-content>
 
-  <ion-list>
+  <form
+    action=""
+    autocomplete="off"
+    (ngSubmit)="login()"
+  >
 
-    <ion-item>
-      <ion-input type="text" placeholder="User Email"></ion-input>
-    </ion-item>
+    <ion-list>
 
-    <ion-item>
-      <ion-input type="password" placeholder="Password"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="User Email"></ion-input>
+      </ion-item>
 
-    <button ion-button full>Login</button>
+      <ion-item>
+        <ion-input type="password" placeholder="Password"></ion-input>
+      </ion-item>
 
-  </ion-list>
+      <button
+        ion-button full type="submit"
+      >
+        Login
+      </button>
+
+    </ion-list>
+
+  </form>
+
+
 
 
 </ion-content>

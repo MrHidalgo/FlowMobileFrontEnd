@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { TaskPage } from '../task/task';
 
 @Component({
   selector: 'login-page',
@@ -7,8 +8,16 @@ import { NavController } from 'ionic-angular';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController) {
+  rootPage: any = TaskPage;
 
+  constructor(
+    public navCtrl: NavController
+  ) {
+    this.rootPage = TaskPage;
+  }
+
+  public login() {
+    this.navCtrl.setRoot(this.rootPage);
   }
 
 }
