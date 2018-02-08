@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, LoadingController, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -7,9 +7,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 // import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { TaskPage } from '../pages/task/task';
-// import { ProfilePage } from '../pages/profile/profile';
-// import { ContactsPage } from '../pages/contacts/contacts';
-// import { SettingPage } from '../pages/setting/setting';
+import { ProfilePage } from '../pages/profile/profile';
+import { HoursPage } from '../pages/hours/hours';
+import { ContactsPage } from '../pages/contacts/contacts';
+import { SettingPage } from '../pages/setting/setting';
 
 @Component({
   templateUrl: 'app.html'
@@ -22,15 +23,22 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen,
+    public loadingCtrl: LoadingController,
+    public menuCtrl: MenuController
+    ) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      // { title: 'Profile', component: ProfilePage },
+      { title: 'Profile', component: ProfilePage },
       { title: 'Task', component: TaskPage },
-      // { title: 'Contacts', component: ContactsPage },
-      // { title: 'Setting', component: SettingPage }
+      { title: 'Hours', component: HoursPage },
+      { title: 'Contacts', component: ContactsPage },
+      { title: 'Setting', component: SettingPage }
     ];
 
   }
@@ -41,6 +49,8 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      this.menuCtrl.enable(false);
     });
   }
 
@@ -51,6 +61,19 @@ export class MyApp {
   }
 
   signOut() {
-    this.nav.setRoot(this.rootPage);
+    this.menuCtrl.close();
+
+    let loader = this.loadingCtrl.create({
+      content: "Thank you for using the application",
+      duration: 1500
+    });
+
+    loader.present();
+
+    setTimeout(() => {
+      this.menuCtrl.enable(false);
+
+      this.nav.setRoot(this.rootPage);
+    }, 1000);
   }
 }

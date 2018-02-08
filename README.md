@@ -36,6 +36,10 @@ You can list available commands with the command:
 
     $ ionic --help 
     
+#### Build Android apk:
+
+    $ ionic cordova build android
+
 #### Using Cordova:
 
 Integrate Ionic with Cordova to bring native capabilities to your app.

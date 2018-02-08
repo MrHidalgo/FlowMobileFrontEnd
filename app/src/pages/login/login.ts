@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 import { TaskPage } from '../task/task';
+
+import { FormGroup, FormControl, Validators }   from '@angular/forms';
 
 @Component({
   selector: 'login-page',
@@ -8,16 +10,35 @@ import { TaskPage } from '../task/task';
 })
 export class LoginPage {
 
-  rootPage: any = TaskPage;
+  public rootPage: any = null; // ???
+  public loginForm: FormGroup = null;
 
   constructor(
-    public navCtrl: NavController
+    public navCtrl: NavController,
+    public menuCtrl: MenuController,
   ) {
     this.rootPage = TaskPage;
+
+    this.loginForm = new FormGroup({
+      "userEmail": new FormControl("", [
+        Validators.pattern("^[a-zA-Z0-9]+[a-zA-Z0-9'._%+\\-]*[a-zA-Z0-9]*\\@(?:[a-z0-9]+(?:-[a-z0-9]+)*\\.)+[a-z]{2,}$"),
+        Validators.required
+      ]),
+      "userPassword": new FormControl("", [
+        Validators.minLength(6),
+        Validators.maxLength(20),
+        Validators.required
+      ])
+    });
   }
 
-  public login() {
+  login() {
+    let form = this.loginForm;
+
     this.navCtrl.setRoot(this.rootPage);
+    this.menuCtrl.enable(true);
+
+    console.log(form.value);
   }
 
 }

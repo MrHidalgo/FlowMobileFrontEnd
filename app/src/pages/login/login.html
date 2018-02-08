@@ -1,41 +1,28 @@
-<!--<ion-header>-->
-  <!--<ion-navbar>-->
-    <!--<button ion-button menuToggle>-->
-      <!--<ion-icon name="menu"></ion-icon>-->
-    <!--</button>-->
-    <!--<ion-title>Home</ion-title>-->
-  <!--</ion-navbar>-->
-<!--</ion-header>-->
 
 <ion-content>
 
   <form
-    action=""
-    autocomplete="off"
-    (ngSubmit)="login()"
+    novalidate
+    [formGroup]="loginForm"
+    (ngSubmit)="login($event)"
   >
 
     <ion-list>
 
       <ion-item>
-        <ion-input type="text" placeholder="User Email"></ion-input>
+        <ion-input clearInput type="text" name="email" formControlName="userEmail" placeholder="User Email"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input type="password" placeholder="Password"></ion-input>
+        <ion-input clearInput type="password" name="password" formControlName="userPassword" placeholder="Password"></ion-input>
       </ion-item>
 
-      <button
-        ion-button full type="submit"
-      >
-        Login
+      <button ion-button full type="submit" [disabled]="loginForm.invalid">
+        Sign In
       </button>
 
     </ion-list>
 
   </form>
-
-
-
 
 </ion-content>
