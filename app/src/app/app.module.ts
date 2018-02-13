@@ -4,18 +4,19 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+
 import { MyApp } from './app.component';
-// import { HomePage } from '../pages/home/home';
-// import { ListPage } from '../pages/list/list';
+
 import { LoginPage } from '../pages/login/login';
 import { TaskPage } from '../pages/task/task';
 import { ProfilePage } from '../pages/profile/profile';
 import { HoursPage } from '../pages/hours/hours';
 import { ContactsPage } from '../pages/contacts/contacts';
 import { SettingPage } from '../pages/setting/setting';
+import { TaskDescription } from '../pages/taskDescription/taskDescription';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProfilePage,
     HoursPage,
     ContactsPage,
-    SettingPage
+    SettingPage,
+    TaskDescription
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProfilePage,
     HoursPage,
     ContactsPage,
-    SettingPage
+    SettingPage,
+    TaskDescription
   ],
   providers: [
     StatusBar,

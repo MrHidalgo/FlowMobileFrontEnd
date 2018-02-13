@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {ModalController} from 'ionic-angular';
+
+import {TaskDescription} from '../taskDescription/taskDescription';
 
 @Component({
   templateUrl: 'task.html'
@@ -7,10 +9,16 @@ import { NavController } from 'ionic-angular';
 
 export class TaskPage {
 
+  constructor(public modalCtrl: ModalController) {
 
+  }
 
-  constructor(public navCtrl: NavController) {
+  openModal(number) {
+    // console.log(number);
 
+    let taskDesc = this.modalCtrl.create(TaskDescription, {number});
+
+    taskDesc.present();
   }
 
 }

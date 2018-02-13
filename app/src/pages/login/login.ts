@@ -10,12 +10,12 @@ import { FormGroup, FormControl, Validators }   from '@angular/forms';
 })
 export class LoginPage {
 
-  public rootPage: any = null; // ???
+  public rootPage: any = null;
   public loginForm: FormGroup = null;
 
   constructor(
     public navCtrl: NavController,
-    public menuCtrl: MenuController,
+    public menuCtrl: MenuController
   ) {
     this.rootPage = TaskPage;
 
@@ -35,10 +35,15 @@ export class LoginPage {
   login() {
     let form = this.loginForm;
 
+    const body = {
+      email: form.value.userEmail,
+      password: form.value.userPassword
+    };
+
     this.navCtrl.setRoot(this.rootPage);
     this.menuCtrl.enable(true);
 
-    console.log(form.value);
+    console.log(body);
   }
 
 }
