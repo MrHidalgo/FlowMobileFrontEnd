@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, MenuController } from 'ionic-angular';
+import { NavController, MenuController, ToastController } from 'ionic-angular';
+import { Network } from '@ionic-native/network';
+
 import { TaskPage } from '../task/task';
 
 import { FormGroup, FormControl, Validators }   from '@angular/forms';
@@ -15,10 +17,10 @@ export class LoginPage {
 
   constructor(
     public navCtrl: NavController,
-    public menuCtrl: MenuController
+    public menuCtrl: MenuController,
+    private network: Network,
+    public toastCtrl: ToastController
   ) {
-    this.rootPage = TaskPage;
-
     this.loginForm = new FormGroup({
       "userEmail": new FormControl("", [
         Validators.pattern("^[a-zA-Z0-9]+[a-zA-Z0-9'._%+\\-]*[a-zA-Z0-9]*\\@(?:[a-z0-9]+(?:-[a-z0-9]+)*\\.)+[a-z]{2,}$"),
@@ -32,6 +34,20 @@ export class LoginPage {
     });
   }
 
+  ngOnInit() {
+    // console.log(`ngOnInit`);
+
+    // console.log(this.network.type);
+
+    // const toast = this.toastCtrl.create({
+    //   message: this.network.type,
+    //   showCloseButton: true,
+    //   closeButtonText: 'Ok'
+    // });
+    //
+    // toast.present();
+  }
+
   login() {
     let form = this.loginForm;
 
@@ -40,6 +56,7 @@ export class LoginPage {
       password: form.value.userPassword
     };
 
+    this.rootPage = TaskPage;
     this.navCtrl.setRoot(this.rootPage);
     this.menuCtrl.enable(true);
 

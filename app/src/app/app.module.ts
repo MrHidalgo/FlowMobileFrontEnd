@@ -2,10 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
-import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Network } from '@ionic-native/network';
 
 import { MyApp } from './app.component';
 
@@ -16,7 +17,6 @@ import { HoursPage } from '../pages/hours/hours';
 import { ContactsPage } from '../pages/contacts/contacts';
 import { SettingPage } from '../pages/setting/setting';
 import { TaskDescription } from '../pages/taskDescription/taskDescription';
-
 
 @NgModule({
   declarations: [
@@ -47,6 +47,7 @@ import { TaskDescription } from '../pages/taskDescription/taskDescription';
     TaskDescription
   ],
   providers: [
+    Network,
     StatusBar,
     SplashScreen,
     {

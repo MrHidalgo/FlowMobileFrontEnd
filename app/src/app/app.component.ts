@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform, LoadingController, MenuController } from 'ionic-angular';
+import { Nav, Platform, LoadingController, MenuController, ToastController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -26,8 +26,10 @@ export class MyApp {
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
     public loadingCtrl: LoadingController,
-    public menuCtrl: MenuController
-    ) {
+    public menuCtrl: MenuController,
+    public toastCtrl: ToastController
+    )
+  {
     this.initializeApp();
 
     // used for an example of ngFor and navigation

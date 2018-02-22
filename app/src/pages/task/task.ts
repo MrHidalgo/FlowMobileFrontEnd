@@ -9,14 +9,14 @@ import {TaskDescription} from '../taskDescription/taskDescription';
 
 export class TaskPage {
 
-  constructor(public modalCtrl: ModalController) {
-
-  }
+  constructor(
+    public modalCtrl: ModalController
+  ) {}
 
   openModal(number) {
-    // console.log(number);
-
-    let taskDesc = this.modalCtrl.create(TaskDescription, {number});
+    let taskDesc = this.modalCtrl.create(TaskDescription, {
+      number
+    });
 
     taskDesc.present();
   }

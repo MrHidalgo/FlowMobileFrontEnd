@@ -10,7 +10,7 @@
 <ion-content>
 
   <ion-list>
-    <ion-card *ngFor="let number of [0,1,2,3,4,5,6,7,8,9]" (click)="openModal(number)">
+    <ion-card *ngFor="let number of [0,1]" (click)="openModal(number)">
       <ion-card-header>
         Header {{number}}
       </ion-card-header>
@@ -19,6 +19,5 @@
       </ion-card-content>
     </ion-card>
   </ion-list>
-
 
 </ion-content>
